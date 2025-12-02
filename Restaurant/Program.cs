@@ -36,9 +36,9 @@ namespace Restaurant
 
             Order order1 = restaurant.CreateOrder(2);
             Console.WriteLine($"Створене нове замовлення для столика №{order1.TableNumber}");
-            IMenuItem? borschItem = menu.FindByName("Борщ");
-            IMenuItem? ciderItem = menu.FindByName("Сидр");
-            IMenuItem? riceItem = menu.FindByName("Рис з овочами");
+            MenuItem? borschItem = menu.FindByName("Борщ");
+            MenuItem? ciderItem = menu.FindByName("Сидр");
+            MenuItem? riceItem = menu.FindByName("Рис з овочами");
 
             if (borschItem != null) order1.AddItem(borschItem);
             if (ciderItem != null) order1.AddItem(ciderItem);
@@ -53,10 +53,10 @@ namespace Restaurant
 
             Order order2 = restaurant.CreateOrder(3);
             Console.WriteLine($"\nСтворене нове замовлення для столика №{order2.TableNumber}");
-            IMenuItem? oliveItem = menu.FindByName("Олів'є");
-            IMenuItem? tea_greenItem = menu.FindByName("Чай зелений");
-            IMenuItem? kotletaItem = menu.FindByName("Куряча котлета");
-            IMenuItem? pureItem = menu.FindByName("Пюре картопляне");
+            MenuItem? oliveItem = menu.FindByName("Олів'є");
+            MenuItem? tea_greenItem = menu.FindByName("Чай зелений");
+            MenuItem? kotletaItem = menu.FindByName("Куряча котлета");
+            MenuItem? pureItem = menu.FindByName("Пюре картопляне");
 
             if (oliveItem != null) order2.AddItem(oliveItem);
             if (tea_greenItem != null) order2.AddItem(tea_greenItem);
@@ -64,11 +64,12 @@ namespace Restaurant
             if (pureItem != null) order2.AddItem(pureItem);
 
             Console.WriteLine($"Сума замовлення: {order2.CalculateTotal()} грн");
-            Console.WriteLine($"\nСтатус: {order1.Status}");
+            Console.WriteLine($"\nСтатус: {order2.Status}");
             order2.ChangeStatus(OrderStatus.InProgress);
 
             restaurant.PrintAllOrders();
         }
     }
 }
+
 
