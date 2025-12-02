@@ -27,7 +27,7 @@ namespace Restaurant
         public void PrintAllOrders()
         {
             Console.WriteLine("\n=================== УСІ ЗАМОВЛЕННЯ ===================");
-            foreach (var order in _orders)
+            foreach (Order order in _orders)
             {
                 order.PrintOrderInfo();
                 Console.WriteLine("-----------------------------------------------------");
@@ -35,7 +35,16 @@ namespace Restaurant
         }
         public Order? FindOrderById(int id)
         {
-            return _orders.FirstOrDefault(o => o.Id == id);
+            foreach (Order order in _orders)
+            {
+                if (order.Id == id)
+                {
+                    return order;
+                }
+            }
+
+            return null;
         }
     }
+
 }
