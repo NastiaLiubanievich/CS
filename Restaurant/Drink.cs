@@ -21,8 +21,13 @@ namespace Restaurant
 
         public override void Description()
         {
-            string alcoholInfo = IsAlcoholic ? "алкогольний" : "безалкогольний";
+            string alcoholInfo;
+            if (IsAlcoholic)
+                alcoholInfo = "алкогольний";
+            else
+                alcoholInfo = "безалкогольний";
             Console.WriteLine($"{Name} ({Volume} мл, {alcoholInfo}) - {Price} грн");
         }
     }
+
 }
