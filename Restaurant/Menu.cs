@@ -18,17 +18,26 @@ namespace Restaurant
         public void PrintMenu()
         {
             Console.WriteLine("\n===================== МЕНЮ =====================");
-            foreach (var item in _items)
+            foreach (MenuItem item in _items)
             {
                 item.Description();
             }
             Console.WriteLine("==================================================\n");
         }
 
-        public IMenuItem? FindByName(string name)
+        public MenuItem? FindByName(string name)
         {
-            return _items.FirstOrDefault(i => i.Name == name);
+            foreach (var item in _items)
+            {
+                if (item.Name.ToLower() == name.ToLower())
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
     }
 }
+
 
