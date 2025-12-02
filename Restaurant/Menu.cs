@@ -8,9 +8,9 @@ namespace Restaurant
 {
     public class Menu
     {
-        private List<IMenuItem> _items = new();
+        private List<MenuItem> _items = new();
 
-        public void AddItem(IMenuItem item)
+        public void AddItem(MenuItem item)
         {
             _items.Add(item);
         }
@@ -27,7 +27,7 @@ namespace Restaurant
 
         public MenuItem? FindByName(string name)
         {
-            foreach (var item in _items)
+            foreach (MenuItem item in _items)
             {
                 if (item.Name.ToLower() == name.ToLower())
                 {
@@ -39,5 +39,6 @@ namespace Restaurant
         }
     }
 }
+
 
 
