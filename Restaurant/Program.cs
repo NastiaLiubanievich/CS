@@ -6,10 +6,7 @@ namespace Restaurant
     {
         static void Main(string[] args)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.InputEncoding = System.Text.Encoding.UTF8;
-
-            Restaurant restaurant = new Restaurant("Фішкі");
+            Restaurant restaurant = new Restaurant();
 
             Menu menu = new Menu();
 
@@ -71,5 +68,6 @@ namespace Restaurant
         }
     }
 }
+
 
 
