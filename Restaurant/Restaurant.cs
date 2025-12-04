@@ -10,14 +10,7 @@ namespace Restaurant
 {
     public class Restaurant
     {
-        public string Name { get; private set; }
-
         private List<Order> _orders = new();
-
-        public Restaurant(string name)
-        {
-            Name = name;
-        }
         public Order CreateOrder(int tableNumber)
         {
             Order newOrder = new Order(tableNumber);
@@ -48,3 +41,4 @@ namespace Restaurant
     }
 
 }
+
